@@ -60,11 +60,17 @@ class HomeView extends GetView<HomeController> {
                       children: [
                         IconButton(
                           onPressed: (){
-                            Get.toNamed('/detail');
+                            Get.toNamed('/detail', arguments:{
+                              'index': index,
+                              'nama' : controller.data[index].nama??'-',
+                              'prodi' : controller.data[index].prodi??'-',
+                              'angkatan' : controller.data[index].angkatan??'-',
+                              'nim' : controller.data[index].nim??'-',
+                              'ipk' : controller.data[index].ipk??'-',
+                            });
                           },
                           icon: Icon(Icons.arrow_circle_right),
                         ),
-
                       ],
                     ),),
                 ],
