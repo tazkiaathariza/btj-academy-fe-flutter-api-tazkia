@@ -1,4 +1,4 @@
-class Mahasiswa {
+/* class Mahasiswa {
   NoooyEMsEgh9zzoyviv? noooyEMsEgh9zzoyviv;
   NoooyEMsEgh9zzoyviv? nop41uYtDBBsNreAB7;
 
@@ -23,19 +23,19 @@ class Mahasiswa {
     }
     return data;
   }
-}
+} */
 
-class NoooyEMsEgh9zzoyviv {
+class Mahasiswa {
   String? angkatan;
   String? ipk;
   String? nama;
   String? nim;
   String? prodi;
 
-  NoooyEMsEgh9zzoyviv(
+  Mahasiswa(
       {this.angkatan, this.ipk, this.nama, this.nim, this.prodi});
 
-  NoooyEMsEgh9zzoyviv.fromJson(Map<String, dynamic> json) {
+  Mahasiswa.fromJson(Map<String, dynamic> json) {
     angkatan = json['angkatan'];
     ipk = json['ipk'];
     nama = json['nama'];

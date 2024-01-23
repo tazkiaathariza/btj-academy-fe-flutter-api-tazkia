@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../models/mahasiswa_model.dart';
 
 class MahasiswaProvider extends GetConnect {
-  @override
+  /* @override
   void onInit() {
     httpClient.defaultDecoder = (map) {
       if (map is Map<String, dynamic>) return Mahasiswa.fromJson(map);
@@ -11,15 +11,19 @@ class MahasiswaProvider extends GetConnect {
         return map.map((item) => Mahasiswa.fromJson(item)).toList();
     };
     httpClient.baseUrl = 'YOUR-API-URL';
+  } */
+
+  Future<Response> getMahasiswa() async {
+    final response = await get('https://btj-academy-default-rtdb.asia-southeast1.firebasedatabase.app/mahasiswa.json');
+    return response;
   }
 
-  Future<Mahasiswa?> getMahasiswa(int id) async {
-    final response = await get('mahasiswa/$id');
-    return response.body;
-  }
+  Future<Response> postMahasiswa(Mahasiswa mahasiswa) async =>
+      await post('https://btj-academy-default-rtdb.asia-southeast1.firebasedatabase.app/mahasiswa.json',
+          mahasiswa.toJson());
 
-  Future<Response<Mahasiswa>> postMahasiswa(Mahasiswa mahasiswa) async =>
-      await post('mahasiswa', mahasiswa);
+  /* Future<Response> postMahasiswa(Mahasiswa mahasiswa) async =>
+      await post('https://btj-academy-default-rtdb.asia-southeast1.firebasedatabase.app/mahasiswa.json', Mahasiswa); */
   Future<Response> deleteMahasiswa(int id) async =>
       await delete('mahasiswa/$id');
 }
