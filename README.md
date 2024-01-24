@@ -7,8 +7,8 @@ Endpoint yang digunakan : https://btj-academy-default-rtdb.asia-southeast1.fireb
 1. `home_view.dart` : Halaman utama yang muncul saat aplikasi dijalankan. Pada halaman ini, seluruh card data
 mahasiswa ditampilkan. Terdapat icon panah untuk mengarahkan ke `detail_view.dart`. User juga dapat menambahkan
 data mahasiswa baru.
-2. `detail_view.dart` : Halaman yang menyajikan detail informasi dari isi card pada `main.dart`. Data 
-yang muncul spesifik sesuai dengan nama yang dipilih pada halaman `main.dart` 
+2. `detail_view.dart` : Halaman yang menyajikan detail informasi dari isi card pada `home_view.dart`. Data 
+yang muncul spesifik sesuai dengan nama yang dipilih pada halaman `home_view.dart`
 (menggunakan Get.argument).
 
 ## Getting started
