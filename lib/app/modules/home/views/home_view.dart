@@ -20,7 +20,7 @@ class HomeView extends GetView<HomeController> {
           itemCount: controller.data.length,
           itemBuilder: (context, index){
             return Container(
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.all(15),
               margin: EdgeInsets.only(bottom: 20),
               decoration: BoxDecoration(
                 color: Colors.deepPurpleAccent.withOpacity(.1),
@@ -28,6 +28,16 @@ class HomeView extends GetView<HomeController> {
               ),
               child: Row(
                 children: [
+                  Container(
+                    child: Row(
+                      children: [
+                        IconButton(
+                          onPressed: (){
+                          },
+                          icon: Icon(Icons.account_circle_sharp),
+                        ),
+                      ],
+                    ),),
                   Expanded(
                       child: Container(
                         child: Column(

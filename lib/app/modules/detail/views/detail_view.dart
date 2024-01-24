@@ -10,8 +10,8 @@ class DetailView extends GetView<DetailController> {
   Widget build(BuildContext context) {
     Get.find<DetailController>();
 
-    Map arguments = Get.arguments ?? {};
-    int index = arguments['index'] ?? 0;
+    var student = Get.arguments;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Detail Mahasiswa'),
@@ -20,7 +20,7 @@ class DetailView extends GetView<DetailController> {
       body: Container(
         margin: EdgeInsets.all(20),
         child: PageView.builder(
-            //itemCount: controller.data.length,
+            itemCount: 1,
             itemBuilder: (context, index) {
               print("index detail");
               print(index);
@@ -46,7 +46,7 @@ class DetailView extends GetView<DetailController> {
                                         fontSize: 14,
                                         color: Colors.white60
                                     )),
-                                    Text(controller.data[index].nama??'-', style: TextStyle(
+                                    Text(student['nama'], style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white,
@@ -57,7 +57,7 @@ class DetailView extends GetView<DetailController> {
                                         fontSize: 14,
                                         color: Colors.white60
                                     )),
-                                    Text(controller.data[index].nim??'-', style: TextStyle(
+                                    Text(student['nim'], style: TextStyle(
                                       fontSize: 18,
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
@@ -101,7 +101,7 @@ class DetailView extends GetView<DetailController> {
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.end,
                                       children: [
-                                        Text(controller.data[index].nama??'-', style: TextStyle(
+                                        Text(student['nama'], style: TextStyle(
                                           fontSize: 14,
                                         ))
                                       ],
@@ -132,7 +132,7 @@ class DetailView extends GetView<DetailController> {
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.end,
                                       children: [
-                                        Text(controller.data[index].nim??'-', style: TextStyle(
+                                        Text(student['nim'], style: TextStyle(
                                           fontSize: 14,
                                         ))
                                       ],
@@ -163,7 +163,7 @@ class DetailView extends GetView<DetailController> {
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.end,
                                       children: [
-                                        Text(controller.data[index].prodi??'-', style: TextStyle(
+                                        Text(student['prodi'], style: TextStyle(
                                           fontSize: 14,
                                         ))
                                       ],
@@ -195,7 +195,7 @@ class DetailView extends GetView<DetailController> {
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.end,
                                       children: [
-                                        Text(controller.data[index].angkatan??'-', style: TextStyle(
+                                        Text(student['angkatan'], style: TextStyle(
                                           fontSize: 14,
                                         ))
                                       ],
@@ -226,7 +226,7 @@ class DetailView extends GetView<DetailController> {
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.end,
                                       children: [
-                                        Text(controller.data[index].ipk??'-', style: TextStyle(
+                                        Text(student['ipk'], style: TextStyle(
                                           fontSize: 14,
                                         ))
                                       ],
