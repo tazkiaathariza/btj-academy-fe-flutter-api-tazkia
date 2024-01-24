@@ -23,7 +23,7 @@ class DetailView extends GetView<DetailController> {
             itemCount: 1,
             itemBuilder: (context, index) {
               print("index detail");
-              print(index);
+              print(student["index"]);
               return Container(
                   child: Column(
                     children: [
